@@ -6,8 +6,8 @@
 library(ggplot2)
 library(gridExtra)
 
-NEI = readRDS("summarySCC_PM25.rds")
-SCC = readRDS("Source_Classification_Code.rds")
+NEI = "NEI data"
+SCC = "SCC data"
 mergedData = merge(NEI[,c(1,2,4,5,6)], SCC[,1:10], by.x = "SCC", by.y = "SCC", all=T)
 
 yearlyEmissions = with(NEI, tapply(Emissions, year, sum))
